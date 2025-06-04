@@ -1,0 +1,179 @@
+:root {
+    --font-family: 'Arial', sans-serif;
+    --color-background: linear-gradient(to right, #BC987E, #D9C3B9);
+    --color-dark: #333;
+    --color-light: rgba(255, 255, 255, 0.9);
+    --color-footer: #A0522D;
+    --padding-small: 6.67px;
+    --padding-medium: 13.33px;
+    --border-radius: 3.33px;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    min-height: 100vh;
+    background-image: var(--color-background);
+    color: var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute; 
+    border: 2px solid rgba(0, 0, 0, 0.5); 
+    border-radius: 8px; 
+    transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s; 
+    opacity: 0; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+
+
+.image-container:hover {
+    transform: scale(1.1) rotate(5deg); 
+    opacity: 1; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); 
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; 
+    }
+}
+
+.image-container {
+    animation: fadeIn 0.5s forwards;
+}
+
+.image1 { animation-delay: 0.1s; }
+.image2 { animation-delay: 0.2s; }
+.image3 { animation-delay: 0.3s; }
+.image4 { animation-delay: 0.4s; }
+.image5 { animation-delay: 0.5s; }
+.image6 { animation-delay: 0.6s; }
+.image7 { animation-delay: 0.7s; }
+.image8 { animation-delay: 0.8s; }
+
+header {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.top-footer {
+    background-color: var(--color-footer);
+    padding: var(--padding-medium) 0; 
+    text-align: center;
+    color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.logo {
+    width: 4vw; 
+    height: auto;
+    margin-top: 10px; 
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: var(--padding-medium); 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px; 
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: var(--padding-small) var(--padding-medium); 
+    border-radius: var(--border-radius); 
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; 
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+}
+
+/* Основной контент */
+main {
+    flex-grow: 1;
+    padding: var(--padding-medium); 
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    box-shadow: 0 0.67vw 3vw rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    max-width: 53.33vw; 
+    margin: var(--padding-medium) auto; 
+    border-radius: calc(var(--border-radius) * 2); 
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+   from { opacity: 0; transform: translateY(20px); }
+   to { opacity: 1; transform: translateY(0); }
+}
+
+main {
+   animation: fadeIn 0.5s ease-in-out; 
+}
+
+/* Анимация пульсации для кнопки */
+@keyframes pulse {
+   0% { transform: scale(1); }
+   50% { transform: scale(1.05); }
+   100% { transform: scale(1); }
+}
+
+/* Анимация пульсации при наведении на ссылки */
+nav a:hover {
+   animation: pulse 1s infinite; 
+}
+
+/* Изображения */
+.image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8 {
+   position: absolute; /* Позиционирование изображений */
+   width: 14vw; /* Ширина изображений по умолчанию */
+   height: auto; /* Высота автоматически подстраивается */
+}
+
+/* Позиционирование изображений */
+.image1 { top: 618px; left: 105px; transform: rotate(15deg); }
+.image2 { top: 350px; left: 86px; transform: rotate(-7deg); }
+.image3 { top: 130px; left: 40px; transform: rotate(22deg); }
+.image4 { top: 10px; left: 310px; transform: rotate(-19deg); }
+.image5 { top: 400px; left: 1550px; transform: rotate(17deg); }
+.image6 { top: 576px; left: 1480px; transform: rotate(-13deg); }
+.image7 { top: 100px; left: 1630px; transform: rotate(-22deg); }
+.image8 { top: 10px; left: 1340px; transform: rotate(19deg); }
